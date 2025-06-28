@@ -288,7 +288,6 @@ const BlackBoxAPISimulator = () => {
         {/* Instructions */}
         <div style={styles.instructions}>
           <p>Instructions: Figure out what each endpoint does by experimenting with different inputs.</p>
-          <p>All endpoints use JSON over HTTP. Real Firebase Functions - no cheating by inspecting code!</p>
         </div>
       </div>
     </div>
