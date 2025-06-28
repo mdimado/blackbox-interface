@@ -225,10 +225,7 @@ const BlackBoxAPISimulator = () => {
           <p style={styles.subtitle}>Reverse engineer these endpoints through experimentation</p>
         </div>
 
-        {/* Warning */}
-        <div style={styles.warning}>
-          <strong>⚠️ Setup Required:</strong> Update FIREBASE_FUNCTIONS_URL in the code with your actual Firebase project URL
-        </div>
+        
 
         {/* Available Endpoints */}
         <div style={styles.section}>
