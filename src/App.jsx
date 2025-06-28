@@ -66,20 +66,27 @@ const BlackBoxAPISimulator = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    
     try {
+      let payload = inputValue;
+      if (selectedEndpoint === '/fizzbuzz') {
+        try {
+          payload = JSON.parse(inputValue);
+          if (!Array.isArray(payload)) throw new Error();
+        } catch {
+          throw new Error('Input must be a valid JSON array');
+        }
+      }
       const result = await callFirebaseFunction(
-        selectedEndpoint, 
-        currentEndpoint.method === 'POST' ? inputValue : null
+        selectedEndpoint,
+        currentEndpoint.method === 'POST' ? payload : null
       );
-      
       setOutput(JSON.stringify(result, null, 2));
     } catch (error) {
       setOutput(`Error: ${error.message}`);
     }
-    
     setIsLoading(false);
   };
+  
 
   const styles = {
     container: {
